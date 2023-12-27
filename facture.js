@@ -48,6 +48,7 @@ const tableFacture = [
 
 
 const tbody = document.getElementById("tbody-facture");
+const inputsearch = document.getElementById("search")
 
 function array() {
     tbody.innerHTML = ""
@@ -57,7 +58,17 @@ function array() {
         <td class="table td"   >${element.name}</td>
         <td class="table td" >${element.date}</td>
         <td class="voir td"  > <button class="button">voir</button> </td>
-    </tr>`
+    </tr>
+    `
+
     });
 }
 array(tableFacture);
+
+inputsearch.addEventListener("input",function (event) {
+    const theTr = document.querySelectorAll(".tr");
+    theTr.forEach((element) => {
+        
+    });
+
+});
