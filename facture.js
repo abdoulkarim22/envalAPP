@@ -48,7 +48,7 @@ const tableFacture = [
 
 
 const tbody = document.getElementById("tbody-facture");
-const inputsearch = document.getElementById("search")
+const search = document.getElementById("search")
 
 function array() {
     tbody.innerHTML = ""
@@ -65,10 +65,23 @@ function array() {
 }
 array(tableFacture);
 
-inputsearch.addEventListener("input",function (event) {
-    const theTr = document.querySelectorAll(".tr");
-    theTr.forEach((element) => {
-        
-    });
 
+search.addEventListener('input',function (event) {
+    var input, filter, table, tr, td, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tbody-facture");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none"; 
+          }
+      } 
+    
+    }
 });
