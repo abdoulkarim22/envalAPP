@@ -74,3 +74,20 @@ const tableCommande = [
   
   }
   array(tableCommande);
+
+
+  document.getElementById('searchCommande').addEventListener('input', function (event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const listItems = document.querySelectorAll('#tbody-commande tr');
+    const results_list = document.getElementById("results-list");
+     const bobyTable = document.getElementById("tbody-facture");
+    listItems.forEach(function (item) {
+        const itemText = item.textContent.toLowerCase();
+
+        if (itemText.includes(searchTerm)) {
+            item.style.display = '';
+        } else  {
+            item.style.display = 'none';
+        }
+    });
+});

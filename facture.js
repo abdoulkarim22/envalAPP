@@ -48,7 +48,7 @@ const tableFacture = [
 
 
 const tbody = document.getElementById("tbody-facture");
-const search = document.getElementById("search")
+
 
 function array() {
     tbody.innerHTML = ""
@@ -66,22 +66,47 @@ function array() {
 array(tableFacture);
 
 
-search.addEventListener('input',function (event) {
-    var input, filter, table, tr, td, txtValue;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("tbody-facture");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none"; 
-          }
-      } 
-    
-    }
+
+
+
+
+
+
+
+
+document.getElementById('search').addEventListener('input', function (event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const listItems = document.querySelectorAll('#tbody-facture tr');
+    const results_list = document.getElementById("results-list");
+     const bobyTable = document.getElementById("tbody-facture");
+    listItems.forEach(function (item) {
+        const itemText = item.textContent.toLowerCase();
+
+        if (itemText.includes(searchTerm)) {
+            item.style.display = '';
+        } else  {
+            item.style.display = 'none';
+        }
+    });
 });
+
+// function searchTable() {
+//      let table_input = document.getElementById("search");
+//      let search_value = table_input.value.toLowerCase();
+//      let table = document.getElementById("tbody-facture");
+//      let tr = table.getElementsByTagName("tr");
+//      for (i = 1 ; i < tr.length; i++) {
+//         // get the first column of every row
+//         let td = tr[i].getElementsByTagName("td")[0];
+//         if (td) {
+//            // get the text content of the table cell
+//            txtValue = td.textContent || td.innerText;
+//            // If the search value is found in the table cell, show the row, otherwise hide it
+//            if (txtValue.toLowerCase().indexOf(search_value) > -1) {
+//               tr[i].style.display = "";
+//            } else {
+//               tr[i].style.display = "none";
+//            }
+//         }
+//      }
+//   }

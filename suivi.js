@@ -76,3 +76,25 @@ const tableSuivi = [
     });
  }
  arraySuivi(tableSuivi);
+
+
+
+
+
+
+
+ document.getElementById('searchSuivi').addEventListener('input', function (event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const listItems = document.querySelectorAll('#tbodySuivi tr');
+    const results_list = document.getElementById("results-list");
+     const bobyTable = document.getElementById("tbodySuivi");
+    listItems.forEach(function (item) {
+        const itemText = item.textContent.toLowerCase();
+
+        if (itemText.includes(searchTerm)) {
+            item.style.display = '';
+        } else  {
+            item.style.display = 'none';
+        }
+    });
+});
