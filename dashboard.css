@@ -674,7 +674,6 @@ a#linKCount{
   left: 50%;
   margin-top: -100px;  /* Negative half of height. */
   margin-left: -260px;
-  
 }
 .alert-text-show{
   transform: scaleY(1);
@@ -1053,5 +1052,21 @@ nav img{
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .barnav, .conteneur2{
     height: 106vh;
+  }
+}
+
+/* ========================Media screen============================== */
+
+@media screen and (max-width: 425px){
+  .alert-text3{
+    position: fixed;
+    width: 400px;
+    height: 150px; 
+    border: 3px solid #3697ab;
+    border-radius: 1rem !important;
+    top: 20%;
+    left: 65%;
+    margin-top: -100px;  /* Negative half of height. */
+    margin-left: -260px;
   }
 }

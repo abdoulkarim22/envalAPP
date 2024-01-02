@@ -70,15 +70,22 @@
                     </ul>
                 </div>
             </nav>
+
         </div>
+
          <!--l'entête -->
+
         <div class="entete">
+
             <div class="nav-bar">
                 <div class="bell">
                     <i class="fa-solid fa-bell"></i>
                 </div>
                  <img src="img/avatar.jpg" alt="" class="img-boostrap" id="navar-img">
             </div>
+
+       
+
          <section class="bill-count">
             <div class="count">
                <div class="head">
@@ -108,8 +115,12 @@
                     </tr>
                     <tr>
                       <td class="title-bottom">Votre photo à été Modifier avec success</td>
-                    </tr>              
+                    </tr>
+              
                   </table>
+
+
+             
                   <table class="alert-text3" >
                     <tr >
                       <td class="title-top" style="font-size: 25px; text-align: center; padding: 1.1rem; margin-bottom: 1rem;">Update password</td>
@@ -134,17 +145,23 @@
                           <button type="password" class="inputUpdate" id="btnSend" placeholder="confirmé password" style="width: 70%; padding: 0.6rem 0.3rem;  font-size: 22px; margin-bottom: 3rem; border-radius: 0.5rem; background-color: #3697ab; border: none; color: #fff; cursor: pointer;"> Send </button>
                         </td>
                       </tr>
-                  </table>                
+                  </table>
+
+
+                
                   <h1>Parametre du compte</h1> <br>
-                  <a href="dashboard.html" id="linKCount"><i class="fi fi-sr-arrow-left" id="linKCount"></i> Retour au tableau de bord</a>               
+                  <a href="dashboard.html" id="linKCount"><i class="fi fi-sr-arrow-left" id="linKCount"></i> Retour au tableau de bord</a>
+               
                </div>
+
                <div class="buttons">
-                <button class="btn-update" id="btn-updateProfil">Modifier le mot de passe</button> <br><br>
+                <button class="btn-update" id="btn-updateProfil" onclick="editMotdepasse()">Modifier le mot de passe</button><br><br>
                 <button class="btn-delete" id="btn-deleteProfil">Supprimer le compte</button>
                </div>
             </div>
             <div class="input-boxs">
-                <div class="inputs">                
+                <div class="inputs">
+                 
                     <p class="avatar-text">Modifier le profil</p>
                     <form action="">
                        <label for="Name"><br><br>Name 
@@ -159,21 +176,24 @@
                     </form>
                     <form action="">
                         <label for="Biographie"><br><br>Biographie
-                            <textarea type="email " name="Biographie" id="myTextArea" placeholder="je suis Cesar" class="inputs1"></textarea> 
+                            <textarea type="email" name="Biographie" id="myTextArea" placeholder="je suis Cesar" class="inputs1"></textarea> 
                            </label>
                     </form>
                     <div class="btn-sends">
-                        <button class="btn-send">Envoyer</button>
+                        <button class="btn-send" onclick="">Envoyer</button>
                     </div>
-                </div>           
+                </div>
+              
                  <div class="avatar">
                    <p class="avatar-text">Ton Avatar</p>
                     <div class="profil-pic-div">
                          <img src="img/avatar.jpg" alt="" class="img" id="photo">
-                        <input type="file" accept="image" id="input-file" >
-                        <label for="input-file" class="btn-updateAvatar" onclick="">Modifier le profil</label>                      
-                    </div>                
-                    <button class="btn-deleteAvatar" id="btn-delete">Supprimer le compte</button> 
+                        <input type="file" accept="image/*" id="input-file" >
+                        <label for="input-file" class="btn-updateAvatar" onclick="">Modifier le profil</label>
+                        
+                    </div>
+                    
+                    <button class="btn-deleteAvatar" id="btn-delete" onclick="deleteUserCount()">Supprimer le compte</button> 
                 </div> 
             </div>
         </section> 
