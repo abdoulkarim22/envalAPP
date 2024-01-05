@@ -81,13 +81,85 @@ const tableCommande = [
     const listItems = document.querySelectorAll('#tbody-commande tr');
     const results_list = document.getElementById("results-list");
      const bobyTable = document.getElementById("tbody-facture");
-    listItems.forEach(function (item) {
-        const itemText = item.textContent.toLowerCase();
+    listItems.forEach(function (element) {
+        const itemText = element.textContent.toLowerCase();
 
         if (itemText.includes(searchTerm)) {
-            item.style.display = '';
+            element.style.display = '';
         } else  {
-            item.style.display = 'none';
+            element.style.display = 'none';
         }
     });
 });
+
+
+const smallertobiggestcommande = document.getElementById("smallertobiggestcommande");
+const raking = document.querySelector(".raking");
+const raking9 = document.querySelector('.raking9_1');
+smallertobiggestcommande.addEventListener("click",function () {
+    raking.classList.add("hidden");
+    raking9.classList.remove("hidden")
+});
+
+const biggesttosmaller = document.getElementById("biggesttosmaller");
+
+const raking9_1 = document.querySelector('.raking9_1');
+biggesttosmaller.addEventListener("click",function () {
+    raking9_1.classList.add("hidden");
+    raking.classList.remove("hidden");
+});
+
+
+
+const smallertobiggestletter_Letter = document.getElementById("smallertobiggestletter_Letter");
+const raking_oneLetter_commande = document.querySelector(".raking_oneLetter_commande");
+const raking9_letter_commande = document.querySelector(".raking9_letter_commande");
+
+smallertobiggestletter_Letter.addEventListener("click",function () {
+    raking_oneLetter_commande.classList.add("hidden");
+    raking9_letter_commande.classList.remove("hidden")
+});
+
+const biggesttosmallerLetter = document.getElementById("biggesttosmallerLetter");
+
+biggesttosmallerLetter.addEventListener("click",function () {
+    raking9_letter_commande.classList.add("hidden");
+    raking_oneLetter_commande.classList.remove("hidden")
+});
+
+
+
+const smallertobiggestcommande_2 = document.getElementById("smallertobiggestcommande_2");
+const raking_2 = document.querySelector(".raking_2");
+const raking9_2 = document.querySelector('.raking9_2');
+smallertobiggestcommande_2.addEventListener("click",function () {
+    raking_2.classList.add("hidden");
+    raking9_3.classList.remove("hidden");
+});
+
+const biggesttosmaller_3 = document.getElementById("biggesttosmaller_3");
+
+const raking9_3 = document.querySelector('.raking9_3');
+biggesttosmaller_3.addEventListener("click",function () {
+    raking9_3.classList.add("hidden");
+    raking_2.classList.remove("hidden");
+   
+});
+
+
+
+const compare = (ids, asc) => (row1, row2) => {
+    const tdValue = (row, ids) => row.children[ids].textContent;
+    const tri = (v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+    return tri(tdValue(asc ? row1 : row2, ids), tdValue(asc ? row2 : row1, ids));
+  };
+  
+
+  const laligneTr = document.querySelectorAll('th');
+  const trxb = tbody.querySelectorAll('tr');
+  laligneTr.forEach(th => th.addEventListener('click', () => {
+    let classe = Array.from(trxb).sort(compare(Array.from(laligneTr).indexOf(th), this.asc = !this.asc));
+    console.log(classe);
+    classe.forEach(tr => tbody.appendChild(tr));
+  }));
+

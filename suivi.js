@@ -98,3 +98,19 @@ const tableSuivi = [
         }
     });
 });
+
+
+const compare = (ids, asc) => (row1, row2) => {
+    const tdValue = (row, ids) => row.children[ids].textContent;
+    const tri = (v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+    return tri(tdValue(asc ? row1 : row2, ids), tdValue(asc ? row2 : row1, ids));
+  };
+  
+
+  const laligneTr = document.querySelectorAll('th');
+  const trxb = tbody.querySelectorAll('tr');
+  laligneTr.forEach(th => th.addEventListener('click', () => {
+    let classe = Array.from(trxb).sort(compare(Array.from(laligneTr).indexOf(th), this.asc = !this.asc));
+    console.log(classe);
+    classe.forEach(tr => tbody.appendChild(tr));
+  }));
