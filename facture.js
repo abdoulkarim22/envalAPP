@@ -110,3 +110,14 @@ document.getElementById('search').addEventListener('input', function (event) {
 //         }
 //      }
 //   }
+
+const smallertobiggest = document.getElementById("smallertobiggest");
+const raking_one = document.querySelector(".raking_one");
+const raking9 = document.querySelector(".raking9");
+
+
+smallertobiggest.addEventListener('click',function () {
+    console.log(true);
+    raking_one.classList.add("hidden");
+    raking9.classList.remove("hidden-Two");
+});

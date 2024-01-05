@@ -1070,3 +1070,7 @@ nav img{
     margin-left: -260px;
   }
 }
+
+.hidden{
+  display: none;
+}
