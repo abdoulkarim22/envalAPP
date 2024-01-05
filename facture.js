@@ -121,3 +121,52 @@ smallertobiggest.addEventListener('click',function () {
     raking_one.classList.add("hidden");
     raking9.classList.remove("hidden-Two");
 });
+
+const biggesttosmaller = document.getElementById("biggesttosmaller");
+
+biggesttosmaller.addEventListener('click',function () {
+    console.log(true);
+    raking9.classList.add("hidden-Two");
+    raking_one.classList.remove("hidden");
+});
+
+const smallertobiggestletter = document.getElementById("smallertobiggestletter");
+const raking_oneLetter = document.querySelector('.raking_oneLetter');
+const raking9_letter = document.querySelector(".raking9_letter");
+const biggesttosmallerLetter = document.getElementById("biggesttosmallerLetter");
+console.log(raking_oneLetter);
+
+smallertobiggestletter.addEventListener('click',function () {
+    // console.log(true);
+    // raking_one.classList.add("hidden");
+    // raking9.classList.add("hidden-Two");
+
+    raking_oneLetter.classList.add("hidden");
+    raking9_letter.classList.remove("hidden-Two");
+});
+biggesttosmallerLetter.addEventListener('click',function () {
+    raking9_letter.classList.add("hidden-Two");
+    raking_oneLetter.classList.remove("hidden");
+});
+
+
+const smallertobiggest_1 = document.getElementById("smallertobiggest_1");
+const raking_one_1 = document.querySelector(".raking_one_1");
+const raking9_1 = document.querySelector(".raking9_1");
+
+
+smallertobiggest_1.addEventListener('click',function () {
+    console.log(true);
+    raking_one_1.classList.add("hidden");
+    raking9_1.classList.remove("hidden-Two");
+});
+
+
+
+const biggesttosmaller_1 = document.getElementById("biggesttosmaller_1");
+
+biggesttosmaller_1.addEventListener('click',function () {
+    console.log(true);
+    raking9_1.classList.add("hidden-Two");
+    raking_one_1.classList.remove("hidden");
+});
