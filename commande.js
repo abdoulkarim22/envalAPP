@@ -147,6 +147,23 @@ biggesttosmaller_3.addEventListener("click",function () {
 });
 
 
+const smallertobiggestletter_satus = document.getElementById("smallertobiggestletter_satus");
+const raking9_letter_status_commande = document.querySelector(".raking9_letter_status_commande");
+const raking_oneLetter_satatus = document.querySelector('.raking_oneLetter_satatus');
+smallertobiggestletter_satus.addEventListener("click",function () {
+    raking_oneLetter_satatus.classList.add("hidden");
+    raking9_letter_status_commande.classList.remove("hidden");
+});
+
+ const biggesttosmallerLetter_status = document.getElementById("biggesttosmallerLetter_status");
+
+
+ biggesttosmallerLetter_status.addEventListener("click",function () {
+    raking9_letter_status_commande.classList.add("hidden");
+    raking_oneLetter_satatus.classList.remove("hidden");
+ });
+
+
 
 const compare = (ids, asc) => (row1, row2) => {
     const tdValue = (row, ids) => row.children[ids].textContent;

@@ -60,7 +60,7 @@ const timer = document.getElementById("timer");
                     input_text.disabled = false;
                     input_password.disabled = false;
                     btnConnexion.disabled = false;
-              }, 300000);
+              }, 240000);
               temps();
 
             }
@@ -68,10 +68,12 @@ const timer = document.getElementById("timer");
         });
     });
 
+  
+  
 
      function temps() {
          const timer = document.getElementById("timer");
-         const Minutes = 5;
+         const Minutes = 4;
          let temps = Minutes * 60;
          setInterval(updateCountdown, 1000);
          input_text.disabled = true;
@@ -79,18 +81,18 @@ const timer = document.getElementById("timer");
          btnConnexion.disabled = true;
          function updateCountdown() {
 
-           const minute = Math.floor(temps / 60);
-           let second = temps % 60;
-           second = second < 10 ? "0" + second : second;
+            const minute = Math.floor(temps / 60);
+            let second = temps % 60;
+            second = second < 10 ? "0" + second : second;
 
-           timer.innerHTML = `00:0${minute}:${second}`;
-           temps--;
-           if (temps < -1) {
-            table_2.style.display = "none"
-            clearInterval(temps);
-          }
-         }
-        }
+        timer.innerHTML = `00:0${minute}:${second}`;
+        temps--;
+        if (temps < -1) {
+         table_2.style.display = "none"
+         clearInterval(temps);
+       }
+      }
+     }
 
 
 //         // {
