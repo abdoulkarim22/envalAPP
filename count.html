@@ -165,9 +165,8 @@
                     <p class="avatar-text">Modifier le profil</p>
                     <form action="">
                        <label for="Name"><br><br>Name 
-                            <input type="text" name="Name" id="input-name" placeholder="Essai test" class="inputs1">
+                            <input type="text"  name="Name" id="input-name" placeholder="Essai test" class="inputs1">
                        </label>
-                       
                     </form>
                     <form action="">
                         <label for="Email"><br><br> Email 
@@ -184,17 +183,26 @@
                     </div>
                 </div>
               
-                 <div class="avatar">
+                 <!-- <div class="avatar">
                    <p class="avatar-text">Ton Avatar</p>
                     <div class="profil-pic-div">
                          <img src="img/avatar.jpg" alt="" class="img" id="photo">
                         <input type="file" accept="image/" >
-                        <label for="input-file" class="btn-updateAvatar" onclick="">Modifier le profil</label>
-                        
+                        <label  for="input-file" class="btn-updateAvatar" onclick="">Modifier le profil</label>
                     </div>
-                    
                     <button class="btn-deleteAvatar" id="btn-delete" onclick="deleteUserCount()">Supprimer le compte</button> 
-                </div> 
+                </div>  -->
+                <div class="avatar">
+                  <p class="avatar-text">Ton Avatar</p>
+                   <div class="profil-pic-div">
+                        <img src="img/avatar.jpg" alt="" class="img" id="photo">
+                       <input type="file" accept="image/*" id="input-file" >
+                       <label for="input-file" class="btn-updateAvatar" onclick="">Modifier le profil</label>
+                       
+                   </div>
+                   
+                   <button class="btn-deleteAvatar" id="btn-delete" onclick="deleteUserCount()">Supprimer le compte</button> 
+               </div> 
             </div>
         </section> 
     </div>
