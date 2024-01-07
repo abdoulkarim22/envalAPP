@@ -26,3 +26,50 @@ function editMotdepasse() {
  alert4.classList.add("alert-text-show3"); 
 
 }
+
+const old_password = document.getElementById("old-password");
+const new_password = document.getElementById("new-password");
+const modifierCompteBtn = document.getElementById("modifierCompteBtn");
+
+
+
+let myCompte = JSON.parse(localStorage.getItem("identifient"));
+const myCompteIdentifient = JSON.parse(localStorage.getItem("identifient"));
+
+// Récupérer le bouton par son ID
+const boutonModifierMotDePasse = document.getElementById("modifierMotDePasseBtn");
+
+// Ajouter un gestionnaire d'événement click
+modifierCompteBtn.addEventListener("click", modifierMotDePasse);
+
+function modifierMotDePasse() {
+  // myCompte.forEach(element => {
+  //   console.log(element);
+  //   if (element.password != old_password.value ) {
+  //     alert("Voleur de codeloccol")
+  //   }
+  // });
+     // Vérifier si le compte existe dans le localStorage
+     if (myCompte) {
+         // Modifier le mot de passe (vous pouvez personnaliser cela)
+         myCompte[0].password = "nouveauMotDePasse";
+
+         // Mettre à jour le compte dans le localStorage
+        myCompte.forEach(element => {
+          let Login = {
+            userName: element.username,
+             passWord: element.password,
+         };
+        localStorage.setItem("utilisateur", JSON.stringify(Login))
+        });
+
+         // Afficher un message (vous pouvez personnaliser le message)
+         alert("Mot de passe modifié avec succès !");
+
+     }
+      else {
+         // Afficher un message si le compte n'existe pas
+         alert("Aucun compte trouvé. Veuillez d'abord créer un compte.");
+     }
+}
+
