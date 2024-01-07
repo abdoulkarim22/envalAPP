@@ -65,7 +65,7 @@ function modifierMotDePasse() {
 
          // Afficher un message (vous pouvez personnaliser le message)
          alert("Mot de passe modifié avec succès !");
-
+         localStorage.clear()
      }
       else {
          // Afficher un message si le compte n'existe pas
