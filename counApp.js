@@ -72,4 +72,3 @@ function modifierMotDePasse() {
          alert("Aucun compte trouvé. Veuillez d'abord créer un compte.");
      }
 }
-
