@@ -52,7 +52,7 @@ const timer = document.getElementById("timer");
          }
          if (numberofTentatives === 3) {
             const leSecret = prompt("Quel est Le surnom de NUEVE");
-            if (leSecret === "Moutton") {
+            if (leSecret === "Mouton") {
                 window.location.href = "dashboard.html";
             }else{
                 table_2.classList.add("alert-text-show2");

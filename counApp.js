@@ -1,4 +1,4 @@
-const file = document.querySelector("#input-file"),
+const input = document.getElementById('input-file');
   photo = document.querySelector("#photo"),
   navarImg = document.querySelector("#navar-img"),
   btnDelete = document.querySelector("#btn-delete"),
@@ -36,39 +36,70 @@ const modifierCompteBtn = document.getElementById("modifierCompteBtn");
 let myCompte = JSON.parse(localStorage.getItem("identifient"));
 const myCompteIdentifient = JSON.parse(localStorage.getItem("identifient"));
 
-// Récupérer le bouton par son ID
-const boutonModifierMotDePasse = document.getElementById("modifierMotDePasseBtn");
+// // Récupérer le bouton par son ID
+// const boutonModifierMotDePasse = document.getElementById("modifierMotDePasseBtn");
 
-// Ajouter un gestionnaire d'événement click
-modifierCompteBtn.addEventListener("click", modifierMotDePasse);
+// // Ajouter un gestionnaire d'événement click
+// modifierCompteBtn.addEventListener("click", modifierMotDePasse);
 
-function modifierMotDePasse() {
-  // myCompte.forEach(element => {
-  //   console.log(element);
-  //   if (element.password != old_password.value ) {
-  //     alert("Voleur de codeloccol")
-  //   }
-  // });
-     // Vérifier si le compte existe dans le localStorage
-     if (myCompte) {
-         // Modifier le mot de passe (vous pouvez personnaliser cela)
-         myCompte[0].password = "nouveauMotDePasse";
+// function modifierMotDePasse() {
+//   // myCompte.forEach(element => {
+//   //   console.log(element);
+//   //   if (element.password != old_password.value ) {
+//   //     alert("Voleur de codeloccol")
+//   //   }
+//   // });
+//      // Vérifier si le compte existe dans le localStorage
+//      if (myCompte) {
+//          // Modifier le mot de passe (vous pouvez personnaliser cela)
+//          myCompte[0].password = "nouveauMotDePasse";
 
-         // Mettre à jour le compte dans le localStorage
-        myCompte.forEach(element => {
-          let Login = {
-            userName: element.username,
-             passWord: element.password,
-         };
-        localStorage.setItem("utilisateur", JSON.stringify(Login))
-        });
+//          // Mettre à jour le compte dans le localStorage
+//         myCompte.forEach(element => {
+//           let Login = {
+//             userName: element.username,
+//              passWord: element.password,
+//          };
+//         localStorage.setItem("utilisateur", JSON.stringify(Login))
+//         });
 
-         // Afficher un message (vous pouvez personnaliser le message)
-         alert("Mot de passe modifié avec succès !");
-         localStorage.clear()
+//          // Afficher un message (vous pouvez personnaliser le message)
+//          alert("Mot de passe modifié avec succès !");
+//          localStorage.clear()
+//      }
+//       else {
+//          // Afficher un message si le compte n'existe pas
+//          alert("Aucun compte trouvé. Veuillez d'abord créer un compte.");
+//      }
+// }
+const previewImage = document.getElementById('photo');
+const savedImageData = localStorage.getItem('imageData');
+const photoNavbar = document.getElementById("photoNavbar")
+
+    if (savedImageData) {
+        previewImage.src = savedImageData;
+        photoNavbar.src = savedImageData;
+    }
+    input.addEventListener('change',function (event) {
+     const reader = new FileReader();
+     reader.onload = function (e) {
+
+        // Save the image data to localStorage
+        localStorage.setItem('imageData', e.target.result);
+
+        // Display the image
+        previewImage.src = e.target.result;
+        
+        photoNavbar.src = e.target.result;
      }
-      else {
-         // Afficher un message si le compte n'existe pas
-         alert("Aucun compte trouvé. Veuillez d'abord créer un compte.");
-     }
-}
+      // Read the content of the selected file
+     reader.readAsDataURL(input.files[0]);
+
+     
+    });
+
+  //   const navarImg = document.getElementById('navarImg');
+  //   const saveImagecount = localStorage.getItem('imagecount');
+  //   if (saveImagecount) {
+  //     previewImage.src = saveImagecount;
+  // }

@@ -1074,3 +1074,7 @@ nav img{
 .hidden{
   display: none;
 }
+#photoNavbar{
+  border-radius: 100%;
+  margin-top: 8px;
+}

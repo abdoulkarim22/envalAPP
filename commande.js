@@ -180,3 +180,4 @@ const compare = (ids, asc) => (row1, row2) => {
     classe.forEach(tr => tbody.appendChild(tr));
   }));
 
+
